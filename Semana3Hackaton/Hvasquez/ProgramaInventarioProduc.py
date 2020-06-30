@@ -72,110 +72,110 @@ print ("                             Realiza el Invetario de Productos          
 print ("-------------------------------------------------------------------------------------------------")
 
 #Función para Agregar Productos
-def addProducto():
-    print("------------------------------------------------------")
-    print("1 : Agregar Productos")
-    blMenuProducto = True
-    while blMenuProducto:
-        print("------------------------------------------------------")
-        print("Seleccione Accion")
-        print("A : Agregar")
-        print("R : Regresar al menu principal")
-        menuProducto = input()
-        if(menuProducto == "A"):
-            strNombreProducto = input("Ingrese el nombre del Producto: ")
-            flValorProducto = float(input(f"Digita en valor de {strNombreProducto}: "))
-            dicProducto = {}
-            dicProducto.update({"NombreProducto":strNombreProducto})
-            dicProducto.update({"ValorProducto":flValorProducto})
-            print(dicProducto)
-            lstProductos.append(dicProducto)
-            print(lstProductos)
+# def addProducto():
+#     print("------------------------------------------------------")
+#     print("1 : Agregar Productos")
+#     blMenuProducto = True
+#     while blMenuProducto:
+#         print("------------------------------------------------------")
+#         print("Seleccione Accion")
+#         print("A : Agregar")
+#         print("R : Regresar al menu principal")
+#         menuProducto = input()
+#         if(menuProducto == "A"):
+#             strNombreProducto = input("Ingrese el nombre del Producto: ")
+#             flValorProducto = float(input(f"Digita en valor de {strNombreProducto}: "))
+#             dicProducto = {}
+#             dicProducto.update({"NombreProducto":strNombreProducto})
+#             dicProducto.update({"ValorProducto":flValorProducto})
+#             print(dicProducto)
+#             lstProductos.append(dicProducto)
+#             print(lstProductos)
         
-        else:
-            print("Gracias por la visita")
-            print ("=====================")
-            blMenuProducto = False
+#         else:
+#             print("Gracias por la visita")
+#             print ("=====================")
+#             blMenuProducto = False
 
-#Función para Listar Productos
-def listProducto():
-    print("------------------------------------------------------------ \n")
-    print("Listado Del Prodcuto \n")
-    print("------------------------------------------------------------ \n")
+# #Función para Listar Productos
+# def listProducto():
+#     print("------------------------------------------------------------ \n")
+#     print("Listado Del Prodcuto \n")
+#     print("------------------------------------------------------------ \n")
     
-    for p in lstProductos:
-      for (key, value) in p.items():
-         print(key, " :: ", value) 
+#     for p in lstProductos:
+#       for (key, value) in p.items():
+#          print(key, " :: ", value) 
 
-#Función para Eliminar Productos
-def delProducto():
-    print("------------------------------------------------------")
-    print("2 : Quitar Productos")
-    while True:
-        print("------------------------------------------------------")
-        print("Seleccione Accion")
-        print("E : Eliminar")
-        print("R : Regresar al menu principal")
-        menuProducto = input()
-        if(menuProducto == "E"):
-            print("Lista de Productos")
-            for p in lstProductos:
-                for (key, value) in p.items():
-                    print(key , " :: ", value )
-            print("Escribir nombre del Producto a Eliminar")
-            strNombreEliminar = input()
-            for p in lstProductos:
-                for (key, value) in p.items():
-                    if(value == strNombreEliminar):
-                        print(f"Borrar {value}???")
-                        lstProductos.remove(p)
-            print(lstProductos)
+# #Función para Eliminar Productos
+# def delProducto():
+#     print("------------------------------------------------------")
+#     print("2 : Quitar Productos")
+#     while True:
+#         print("------------------------------------------------------")
+#         print("Seleccione Accion")
+#         print("E : Eliminar")
+#         print("R : Regresar al menu principal")
+#         menuProducto = input()
+#         if(menuProducto == "E"):
+#             print("Lista de Productos")
+#             for p in lstProductos:
+#                 for (key, value) in p.items():
+#                     print(key , " :: ", value )
+#             print("Escribir nombre del Producto a Eliminar")
+#             strNombreEliminar = input()
+#             for p in lstProductos:
+#                 for (key, value) in p.items():
+#                     if(value == strNombreEliminar):
+#                         print(f"Borrar {value}???")
+#                         lstProductos.remove(p)
+#             print(lstProductos)
 
-        else:
-            print("Gracias por la visita")
-            print ("=====================")
-            break
+#         else:
+#             print("Gracias por la visita")
+#             print ("=====================")
+#             break
 
-#Menu para Ejecutar el Inventario
-def showInventario():
-    print("------------------------------------------------------")
-    print("3 : Inventario")
-    print("------------------------------------------------------")
+# #Menu para Ejecutar el Inventario
+# def showInventario():
+#     print("------------------------------------------------------")
+#     print("3 : Inventario")
+#     print("------------------------------------------------------")
     
-    print(lstProductos)
-    fltTotal=0.0
+#     print(lstProductos)
+#     fltTotal=0.0
     
-    for p in lstProductos:
-        for (key, value) in p.items():
-            # print(p['CantidadProducto'])
-            fltTprod = p['CantidadProducto'] * p['ValorProducto']
-        fltTotal += fltTprod
-    print(fltTotal)
+#     for p in lstProductos:
+#         for (key, value) in p.items():
+#             # print(p['CantidadProducto'])
+#             fltTprod = p['CantidadProducto'] * p['ValorProducto']
+#         fltTotal += fltTprod
+#     print(fltTotal)
 
-#Función para Ver el Menu
-while True:
-    print("Menu Principal: Escoge la opcion a realizar")
-    print("1 : Agregar Producto")
-    print("2 : Eliminar Producto")
-    print("3 : Inventario")
-    print("0 : Salir")
-    strMenuPrincipal = input()
-    if(strMenuPrincipal == "1"):
-        addProducto()
-    elif(strMenuPrincipal == "2"):
-        delProducto()
-    elif(strMenuPrincipal == "3"):
-        showInventario()
-    elif(strMenuPrincipal == "0"):
-        break
-    else:
-        print ("No escogio las opciones indicadas; desea salir?")
-        print ("Si : S")
-        print ("No : N")
-        opcionSalir = input()
-        print ("-----------------------------------------------")
+# #Función para Ver el Menu
+# while True:
+#     print("Menu Principal: Escoge la opcion a realizar")
+#     print("1 : Agregar Producto")
+#     print("2 : Eliminar Producto")
+#     print("3 : Inventario")
+#     print("0 : Salir")
+#     strMenuPrincipal = input()
+#     if(strMenuPrincipal == "1"):
+#         addProducto()
+#     elif(strMenuPrincipal == "2"):
+#         delProducto()
+#     elif(strMenuPrincipal == "3"):
+#         showInventario()
+#     elif(strMenuPrincipal == "0"):
+#         break
+#     else:
+#         print ("No escogio las opciones indicadas; desea salir?")
+#         print ("Si : S")
+#         print ("No : N")
+#         opcionSalir = input()
+#         print ("-----------------------------------------------")
 
-        if(opcionSalir == "S"):
-            break
+#         if(opcionSalir == "S"):
+#             break
 
-        0
+        
